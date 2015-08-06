@@ -6,6 +6,8 @@
         <title>Sample task</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="chosen/chosen.min.css">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
@@ -17,73 +19,137 @@
 
         <section id="wrapper">
             <header>
-                <a id="logo" href="#">Logo</a>
-
+                <a id="logo" href="#"></a>
+                <div class="btn-sandwich">
+                    <span></span>
+                </div>
                 <nav>
                     <ul>
                         <li>
-                            <a href="#">Пункт меню</a>
-                            <span>48</span>
+
+                            <a href="#">
+                                <span>Пункт меню</span>
+                                <span class="count">48</span>
+                            </a>
                         </li>
-                        <li>
-                            <a href="#">Второй пункт меню</a>
+                        <li class="selected">
+                            <a href="#">
+                                <span>Второй пункт меню</span>
+                            </a>
                         </li>
                     </ul>
                 </nav>
 
             </header>
+            <div class="content-head">
 
-            <h1>Тестовое задание</h1>
+                <h1>Тестовое задание</h1>
 
-            <article>
-                Ниже представлена часть интерфейса ЦУП (Центр управления продажами). Кандидату предлагается сверстать адаптивный макет (HTML 5 + CSS 3) с поддержкой ретина-дисплеев и написать необходимый для его работы JS.
-            </article>
+                <article>
+                    Ниже представлена часть интерфейса ЦУП (Центр управления продажами). Кандидату предлагается сверстать адаптивный макет (HTML 5 + CSS 3) с поддержкой ретина-дисплеев и написать необходимый для его работы JS.
+                </article>
+
+            </div>
 
             <div id="form-filter">
                 <form action="#">
                     <div id="regions">
-                        <p>Таргетирование анкеты по торговым точкам</p>
-                        <div class="area">
+                        <p class="title">Таргетирование анкеты по торговым точкам</p>
+                        <div id="region" class="area">
                             <p>Регион:</p>
+                            <small>Выберите один или несколько регионов и/или территорий, где будет доступна анкета.</small>
                             <div class="multy-check">
                                 <ul>
                                     <li>
-                                        <label for="big-1">Название большого региона</label>
-                                        <input id="big-1" type="checkbox">
-                                        		Регион поменьше
-                                        				Маленький регион
-                                        				Еще один маленький регион
-                                        				Третий маленький регион
-                                        						Территория 1
-                                        						Вторая территория
-                                        						Ещё одна территория
-                                        						Четвёртая
-                                        						Последняя территория
-                                        				Четвертый регион
-                                        		Второй средний регион
+                                        <span>Название большого региона</span>
+                                        <ul>
+                                            <li><span>Регион поменьше</span>
+                                                <ul>
+                                                    <li><span>Маленький регион</span></li>
+                                                    <li><span>Еще один маленький регион</span></li>
+                                                    <li><span>Третий маленький регион</span>
+                                                        <ul>
+                                                            <li><span>Территория 1</span></li>
+                                                            <li><span>Вторая территория</span></li>
+                                                            <li><span>Ещё одна территория</span></li>
+                                                            <li><span>Четвёртая</span></li>
+                                                            <li><span>Последняя территория</span></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><span>Четвертый регион</span></li>
+                                                </ul>
+                                            </li>
+                                            <li><span>Второй средний регион</span></li>
+                                        </ul>
                                     </li>
+                                    <li><span>Еще один большой регион</span></li>
+                                    <li><span>Третий большой регион</span></li>
                                 </ul>
-
-
-                                Еще один большой регион
-                                Третий большой регион
+                                <span class="close">+</span>
                             </div>
                         </div>
+
+                        <div id="status" class="area">
+                            <p>Статус:</p>
+                            <div>
+                                <select class="#" name="select-1">
+                                    <option value="1">Открыта</option>
+                                    <option value="1">Закрыта</option>
+                                </select>
+                                <span class="close">+</span>
+                            </div>
+                        </div>
+
+                        <div id="type" class="area">
+                            <p>Тип:</p>
+                            <div>
+                                <select class="type" name="select-1" multiple="multy-check">
+                                    <option value="1">Гипермаркет</option>
+                                    <option value="1">Магазин</option>
+                                </select>
+                                <span class="close">+</span>
+                            </div>
+                        </div>
+
+                        <div id="param" class="area">
+                            <p>Параметр:</p>
+                            <div>
+                                <select class="#" name="select-1">
+                                    <option value="1">Равно</option>
+                                    <option value="1">Больше</option>
+                                    <option value="1">Меньше</option>
+                                </select>
+                                <input type="text" value="" placeholder="значение">
+                                <span class="close">+</span>
+                            </div>
+                        </div>
+
                     </div>
                     <div id="form-footer">
-
+                        <small>Выберите критерии отбора  вашей анкеты.</small>
+                        <a class="ico-region" href="#region">Регион и территория</a>
+                        <a class="ico-status" href="#status">Статус</a>
+                        <a class="ico-type" href="#type">Тип ТТ</a>
+                        <a class="ico-param" href="#param">Параметр</a>
                     </div>
                 </form>
             </div>
 
             <footer>
-
+                <div class="right">
+                    <a href="#">Контактная информация</a>
+                    <a href="#">Тех.поддержка</a>
+                    <a href="#">Новости</a>
+                </div>
+                <div class="left">
+                    <p class="copy">© «Первый БИТ», 2014</p>
+                </div>
             </footer>
         </section>
 
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{JQUERY_VERSION}}/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-{{JQUERY_VERSION}}.min.js"><\/script>')</script>
+        <script src="jquery-1.11.3.min.js"></script>
+        <script src="chosen/chosen.jquery.js"></script>
         <script src="main.js"></script>
     </body>
 </html>
